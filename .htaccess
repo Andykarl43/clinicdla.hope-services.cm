@@ -1,0 +1,17 @@
+# HTID:16216376: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:16216376:
+
+RewriteEngine on
+
+#php_value session.cookie_path "/"
+
+#php_value session.cookie_domain "clinicdla.hope-services.cm"
+
+#php_value upload_max_filesize 19M
+
+#php_value post_max_size 20M
+
+php_flag output_buffering on
+
+#php_flag session.auto_start on
