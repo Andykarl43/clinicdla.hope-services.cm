@@ -141,12 +141,23 @@ include('php/main_side_navbar.php');
                                         <td><a href="#"><?=number_format($payer);?></a></td>
                                         <td><a href="#"><?=number_format($remise);?></a></td>
                                         <td>
+                                            <?php
+                                            if($lvl == 11){
+                                                if ($somme - ($payer + $remise) == 0)
+                                                    echo '<span class="custom-badge status-green" >Ok</span>';
+                                                else
+                                                    echo '<span class="custom-badge status-red" >Pas à Jour</span>';
 
-                                            <?php if($somme-($payer+$remise)==0)
-                                                echo'<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterOpe'.$id_reg_ordo.'">Ok</span>';
-                                            else
-                                                echo'<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterOpe'.$id_reg_ordo.'">Pas à Jour</span>';
+                                            }else{
+                                                if ($somme - ($payer + $remise) == 0)
+                                                    echo '<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterOdor' . $id_reg_ordo . '">Ok</span>';
+                                                else
+                                                    echo '<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterOdor' . $id_reg_ordo . '">Pas à Jour</span>';
+
+                                            }
                                             ?>
+
+
 
 
                                         </td>
@@ -154,9 +165,17 @@ include('php/main_side_navbar.php');
                                                 <i class='fa fa-print'"></i>
                                             </a></td>
                                         <td class="text-right">
-                                            <?php if($etat==1) {
-                                                echo '<a href="rembourser_ordo.php?id_ordo='.$id_ordo.'&id_reg_ordo='.$id_reg_ordo.'" onclick="Supp(this.href); return(false);"><span class="custom-badge status-blue" ">rembourser</span></a>';
-                                            }
+                                            <?php
+                                                if($lvl ==11){
+                                                    if($etat==1) {
+                                                        echo '<a href="#" ><span class="custom-badge status-blue" ">rembourser</span></a>';
+                                                    }
+                                                }else{
+                                                    if($etat==1) {
+                                                        echo '<a href="rembourser_ordo.php?id_ordo='.$id_ordo.'&id_reg_ordo='.$id_reg_ordo.'" onclick="Supp(this.href); return(false);"><span class="custom-badge status-blue" ">rembourser</span></a>';
+                                                    }
+                                                }
+
                                             ?>
                                             <div class="modal fade" id="ajouterOpe<?=$id_reg_ordo?>" role="dialog">
                                                 <div class="modal-dialog">

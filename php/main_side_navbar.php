@@ -149,7 +149,7 @@ include('navbar_links.php');
 
                             <!--***************Patient***********************-->
                             <?php
-                            if($lvl != 6  ){
+                            if($lvl != 6 ){
                             ?>
 
                             <a class="nav-link collapsed" href="<?= $patient['option2_link'] ?>" aria-expanded="false"
@@ -222,7 +222,7 @@ include('navbar_links.php');
 
 
                     <?php
-                    if($lvl != 10  and $lvl != 6 and $lvl !=1   ){
+                    if($lvl != 10  and $lvl != 6 and $lvl !=1 and $lvl != 11   ){
                     ?>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages5"
                        aria-expanded="false" aria-controls="collapsePages">
@@ -309,7 +309,7 @@ include('navbar_links.php');
                     ?>
 
                     <?php
-                    if( $lvl == 2 || $lvl == 4 || $lvl == 7 || $lvl == 5 || $lvl == 10 || $lvl == 11 || $lvl == 12 ){
+                    if( $lvl == 2 || $lvl == 4 || $lvl == 7 || $lvl == 5 || $lvl == 10  || $lvl == 12 ){
                         ?>
                     <!--***************Ordonnance***********************-->
 
@@ -539,7 +539,7 @@ include('navbar_links.php');
                     <div class="collapse" id="collapsePages7" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <?php
-                        if( $lvl == 4 ||  $lvl == 7  ){
+                        if( $lvl == 4 ||  $lvl == 7 || $lvl == 2 ){
                         ?>
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse"
@@ -553,18 +553,18 @@ include('navbar_links.php');
                                  data-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <?php
-                                    if( $lvl == 4 ||  $lvl == 7   ){
+                                    if( $lvl == 4 ||  $lvl == 7 || $lvl == 2 ){
                                     ?>
 
                                     <a href="<?= $user_list['option1_link'] ?>"
                                        class="nav-link"><?= $user_list['option1_name'] ?></a>
-                                    <a href="<?= $user_list['option2_link'] ?>"
-                                       class="nav-link"><?= $user_list['option2_name'] ?></a>
                                     <?php }?>
 
                                     <?php
                                     if( $lvl == 4 ||  $lvl == 7   ){
                                     ?>
+                                    <a href="<?= $user_list['option2_link'] ?>"
+                                           class="nav-link"><?= $user_list['option2_name'] ?></a>
                                     <a href="<?= $user_list['option3_link'] ?>"
                                        class="nav-link"><?= $user_list['option3_name'] ?></a>
                                     <?php }?>

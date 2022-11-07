@@ -156,7 +156,7 @@ include('php/main_side_navbar.php');
                                                                             <input type="submit" style=" width:25% "
                                                                                    name="submit_cs"
                                                                                    class="btn btn-primary"
-                                                                                   value="Payer">
+                                                                                   value="Modifier">
 
                                                                             <input data-dismiss="modal" type="text"
                                                                                    style=" width:25% " name=""

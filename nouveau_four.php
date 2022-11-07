@@ -4,6 +4,18 @@ include('first.php');
 include('php/db.php');
 include('php/main_side_navbar.php');
 
+$year = (new DateTime())->format("Y");
+$month = (new DateTime())->format("m");
+$day = (new DateTime())->format("d");
+$query  = "SELECT count(id_four) as total from fournisseur";
+$q = $conn->query($query);
+while($row = $q->fetch_assoc())
+{
+    $total_apt = $row["total"];
+}
+$id_app = $total_apt + 1;
+$ref_app = 'FOUR_'.$year.'_'.$month.'_'.$day.'_'.$id_app;
+
 ?>
 
     <!--Content-->
@@ -44,7 +56,8 @@ include('php/main_side_navbar.php');
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label>Réference <span class="text-danger">*</span></label>
-                                                            <input class="form-control" type="text" name="ref_four">
+                                                            <input class="form-control" type="hidden" name="ref_four" value="<?=$ref_app?>">
+                                                            <input class="form-control" type="text" name="ref_four" value="<?=$ref_app?>" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">

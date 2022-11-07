@@ -172,20 +172,23 @@ include('php/main_side_navbar.php');
                                     <td><a href="#"><?=number_format($somme_reg-$payer_reg-$remise);?></a></td>
                                     <td><a href="#"><?=number_format($payer_reg);?></a></td>
                                     <td><a href="#"><?=number_format($remise);?></a></td>
-                                    <td><?php if($somme_reg-($payer_reg+$remise)==0)
-//                                            echo'<a
-//                                                                            href="modifier_hosp_checker.php?id='.$id_reg_consul.'"
-//                                                                            title=""
-//                                                                            style="color: black"><span class="custom-badge status-green">Ok</span></a>
-//                                                                            ';
-                                    echo'<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterCon'.$id_reg_consul.'">Ok</span>';
-                                        else
-//                                            echo'<a
-//                                                                            href="modifier_hosp_checker.php?id='.$id_reg_consul.'"
-//                                                                            title=""
-//                                                                            style="color: black"><span class="custom-badge status-red">Pas à Jour</span></a>';
-                                        echo'<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterCon'.$id_reg_consul.'">Pas à Jour</span>';
+                                    <td>
+                                        <?php
+                                        if($lvl == 11){
+
+                                                if($somme_reg-($payer_reg+$remise)==0)
+                                                    echo'<span class="custom-badge status-green" >Ok</span>';
+                                                else
+                                                    echo'<span class="custom-badge status-red" >Pas à Jour</span>';
+
+                                        }else{
+                                            if($somme_reg-($payer_reg+$remise)==0)
+                                                echo'<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterCon'.$id_reg_consul.'">Ok</span>';
+                                            else
+                                                echo'<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterCon'.$id_reg_consul.'">Pas à Jour</span>';
+                                        }
                                         ?>
+
                                     </td>
 
                                     <td align="center"><a href="facture_consultation.php?id_reg_consul=<?=$id_reg_consul?>&id_perso=<?=$id_perso_session?>" target="_blank">

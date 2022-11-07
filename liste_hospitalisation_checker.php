@@ -162,11 +162,23 @@ include('php/main_side_navbar.php');
                                     <td><a href="#"><?=number_format($payer_reg);?></a></td>
                                     <td><a href="#"><?=number_format($remise);?></a></td>
                                     <td>
-                                        <?php if($somme_reg-($payer_reg+$remise)==0)
-                                            echo'<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterHosp'.$id_reg_hosp.'">Ok</span>';
-                                        else
-                                            echo'<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterHosp'.$id_reg_hosp.'">Pas à Jour</span>';
+                                        <?php
+                                        if($lvl == 11){
+                                            if($somme_reg-($payer_reg+$remise)==0)
+                                                echo'<span class="custom-badge status-green" >Ok</span>';
+                                            else
+                                                echo'<span class="custom-badge status-red" >Pas à Jour</span>';
+
+
+                                        }else{
+                                            if($somme_reg-($payer_reg+$remise)==0)
+                                                echo'<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterHosp'.$id_reg_hosp.'">Ok</span>';
+                                            else
+                                                echo'<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterHosp'.$id_reg_hosp.'">Pas à Jour</span>';
+
+                                        }
                                         ?>
+
                                         </td>
                                     <td align="center"><a href="facture_hospitalisation.php?id_reg_hosp=<?=$id_reg_hosp?>&id_perso=<?=$id_perso_session?>" target="_blank">
                                             <i class='fa fa-print'"></i>

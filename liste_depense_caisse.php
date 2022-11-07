@@ -220,17 +220,22 @@ include('php/main_side_navbar.php');
 <!--                                        </td>-->
                                         <td class="text-center">
                                             <?php
+                                            if($lvl == 11) {
+                                                echo'<a class="btn btn-success" href="#"><i class="fa fa-plus-square"></i></a>';
+                                            }else{
+                                                if($etat!=1){
 
-                                            if($etat!=1){
-
-                                                echo' <a class="btn btn-warning" href="modifier_depense_caisse.php?id_deps_caisse='.$id_deps_caisse.'">
+                                                    echo' <a class="btn btn-warning" href="modifier_depense_caisse.php?id_deps_caisse='.$id_deps_caisse.'">
                                                          <i class="fa fa-pencil-alt"></i></a>||<a class="btn btn-primary" href="valider_depense_caisse.php?id_caisse='.$id_caisse.'&montant='.$montant.'$&id_deps_caisse='.$id_deps_caisse.'">
                                                          <i class="fa fa-check"></i></a>||<a class="btn btn-danger"  onclick="Supp(this.href); return(false);" href="delete_depense_caisse.php?id_caisse='.$id_caisse.'&montant='.$montant.'$&id_deps_caisse='.$id_deps_caisse.'" >
                                                          <i class="fa fa-trash"></i></a>';
 
-                                            }else{
-                                                echo'<a class="btn btn-success" href="#"><i class="fa fa-handshake"></i></a>';
+                                                }else{
+                                                    echo'<a class="btn btn-success" href="#"><i class="fa fa-handshake"></i></a>';
+                                                }
+
                                             }
+
 
 
 

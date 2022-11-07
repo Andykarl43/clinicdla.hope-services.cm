@@ -84,9 +84,9 @@ include('php/main_side_navbar.php');
                                         <td><a href="#"><img width="28" height="28" src="assetss/img/user.jpg"
                                                              class="rounded-circle m-r-5" alt=""><?=$nom_caisse_dst?></a></td>
                                         <td><a href="#"><?=number_format($quantite)?></a></td>
-                                        <td> <?php if($id_perso == $id_perso_session){?>
+                                        <td>
                                         <a href="#"><?php if($date_valide=='N/A'){echo 'N/A';}else{echo date("d-m-Y",strtotime($date_valide)); echo ' ('.$heure.')';} ?></a></td>
-                                       <?php }?> <td>
+                                        <td>
                                             <a class="btn btn-success" href="#"><i class="fa fa-handshake"></i></a>
 
                                         </td>

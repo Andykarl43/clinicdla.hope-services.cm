@@ -34,56 +34,56 @@ include('php/main_side_navbar.php');
                                     </a>
                                 </li>
                             </ul>
-                            <ul class="nav nav-pills"   style="float: right; margin-right: 20px ;">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="liste_depense_succes.php"><i class="fas fa-donate"></i>
-
-                                        <?php
-                                        if($lvl == 12){
-                                            $query = "SELECT count(id_rap_caisse) as total from rapport_caisse where id_perso='$id_perso_session' ";
-                                        }else{
-                                            $query = "SELECT count(id_rap_caisse) as total from rapport_caisse ";
-                                        }
-
-                                        $q = $db->query($query);
-                                        while($row = $q->fetch())
-                                        {
-                                            echo ' Dépense accepter ['.$row['total'].']';
-
-                                        }
-
-                                        ?>
-
-
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-pills"   style="float: right; margin-right: 20px ;">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="liste_depense_echec.php"><i class="fas fa-donate"></i>
-
-                                        <?php
-                                        if($lvl == 2){
-                                            $query = "SELECT count(id_deps_caisse) as total from depense_caisse where id_perso='$id_perso_session' and etat=-1 ";
-                                        }else{
-                                            $query = "SELECT count(id_deps_caisse) as total from depense_caisse where etat=-1 ";
-                                        }
-
-
-
-                                        $q = $db->query($query);
-                                        while($row = $q->fetch())
-                                        {
-                                            echo ' Dépense refuser ['.$row['total'].']';
-
-                                        }
-
-                                        ?>
-
-
-                                    </a>
-                                </li>
-                            </ul>
+<!--                            <ul class="nav nav-pills"   style="float: right; margin-right: 20px ;">-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a class="nav-link" href="liste_depense_succes.php"><i class="fas fa-donate"></i>-->
+<!---->
+<!--                                        --><?php
+////                                        if($lvl == 12){
+////                                            $query = "SELECT count(id_rap_caisse) as total from rapport_caisse where id_perso='$id_perso_session' ";
+////                                        }else{
+////                                            $query = "SELECT count(id_rap_caisse) as total from rapport_caisse ";
+////                                        }
+////
+////                                        $q = $db->query($query);
+////                                        while($row = $q->fetch())
+////                                        {
+////                                            echo ' Dépense accepter ['.$row['total'].']';
+////
+////                                        }
+//
+//                                        ?>
+<!---->
+<!---->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                            <ul class="nav nav-pills"   style="float: right; margin-right: 20px ;">-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a class="nav-link" href="liste_depense_echec.php"><i class="fas fa-donate"></i>-->
+<!---->
+<!--                                        --><?php
+////                                        if($lvl == 2){
+////                                            $query = "SELECT count(id_deps_caisse) as total from depense_caisse where id_perso='$id_perso_session' and etat=-1 ";
+////                                        }else{
+////                                            $query = "SELECT count(id_deps_caisse) as total from depense_caisse where etat=-1 ";
+////                                        }
+////
+////
+////
+////                                        $q = $db->query($query);
+////                                        while($row = $q->fetch())
+////                                        {
+////                                            echo ' Dépense refuser ['.$row['total'].']';
+////
+////                                        }
+//
+//                                        ?>
+<!---->
+<!---->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
 
 
                         </b>
@@ -109,6 +109,7 @@ include('php/main_side_navbar.php');
                                     <th>Montant</th>
                                     <th>Date</th>
                                     <th>Motif</th>
+                                    <th>PDF</th>
                                     <th class="text-center">Action</th>
                                     <!--                                    <th>PDF</th>-->
                                 </tr>
@@ -143,6 +144,7 @@ include('php/main_side_navbar.php');
                                     $cinq = $row['cinq'];
                                     $deux = $row['deux'];
                                     $un = $row['un'];
+                                    $etat = 1;
                                     // $sql = "SELECT * from caisse where id_caisse = '$id_caisse'";
 
                                     // $stmt = $db->prepare($sql);
@@ -171,7 +173,7 @@ include('php/main_side_navbar.php');
 
                                     <tr>
                                         <td><a href="#"><?=$ref_rap?></a></td>
-                                        <!--<td><a href="#"><?php //$caisse?></a></td>   --> 
+                                        <td><a href="#"><?php //$caisse?>---</a></td>
                                         <td><a href="#"><img width="28" height="28" src="assetss/img/user.jpg"
                                                                                                      class="rounded-circle m-r-5"
                                                                                                      alt=""><?=$nom?></a></td>
@@ -205,60 +207,60 @@ include('php/main_side_navbar.php');
                                                                   <tr>
                                                                     <td>10.000</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$dixmilles?></td>
                                                                   </tr
                                                                   <tr>
                                                                     <td>5.000</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$cinqmilles?></td>
                                                                   </tr>
                                                                   <tr>
                                                                     <td>2.000</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$deuxmilles?></td>
                                                                   </tr><tr>
                                                                     <td>1.000</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$mille?></td>
                                                                   </tr><tr>
                                                                     <td>500(billets)</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$cinqcentnote?></td>
                                                                   </tr>
                                                                   <tr>
                                                                     <td>500(Pièces)</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$cinqcentcoin?></td>
                                                                   </tr>
                                                                   <tr>
                                                                     <td>100</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$cent?></td>
                                                                   </tr><tr>
                                                                     <td>50</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$cinquante?></td>
                                                                   </tr><tr>
                                                                     <td>25</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$vingtcinq?></td>
                                                                   </tr><tr>
                                                                     <td>10</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$dix?></td>
                                                                   </tr><tr>
                                                                     <td>5</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$cinq?></td>
                                                                   </tr>
                                                                   <tr>
                                                                     <td>2</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$deux?></td>
                                                                   </tr><tr>
                                                                     <td>1</td>
                                                                     <td>Brown</td>
-                                                                    <td>$250</td>
+                                                                    <td>$<?=$un?></td>
                                                                   </tr>
                                                                 </table>
                                                                 <div class="form-group">
@@ -274,9 +276,9 @@ include('php/main_side_navbar.php');
                                                 </div>
                                             </div>
                                         </td>
-                                        <!--                                        <td align="center"><a href="#" target="_blank">-->
-                                        <!--                                                <i class='fa fa-print'></i>-->
-                                        <!--                                            </a></td>-->
+                                        <td align="center"><a href="facture_cash.php?id_rap_caisse=<?=$id_rap_caisse?>" target="_blank">
+                                                <i class='fa fa-print'></i>
+                                            </a></td>
 <!--                                        <td class="text-right">-->
 <!--                                            <div class="dropdown dropdown-action">-->
 <!--                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"-->

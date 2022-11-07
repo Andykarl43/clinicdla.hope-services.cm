@@ -53,7 +53,7 @@ include('php/main_side_navbar.php');
                                                             <th><p align="center">Date d'inscription</p></th>
                                                             <th><p align="center">Statut</p></th>
                                                             <?php
-                                                            if ($lvl == 4 || $lvl == 5) {
+                                                            if ($lvl == 4 || $lvl == 5 || $lvl == 7) {
                                                                 ?>
                                                                 <th><p align="center">Action</p></th>
                                                                 <?php
@@ -69,7 +69,7 @@ include('php/main_side_navbar.php');
                                                             <th><p align="center">Date d'inscription</p></th>
                                                             <th><p align="center">Statut</p></th>
                                                             <?php
-                                                            if ($lvl == 4 || $lvl == 5) {
+                                                            if ($lvl == 4 || $lvl == 5 || $lvl == 7) {
                                                                 ?>
                                                                 <th><p align="center">Action</p></th>
                                                                 <?php
@@ -133,7 +133,7 @@ include('php/main_side_navbar.php');
                                                                 <td align="center"><b><?= $date; ?></b></td>
                                                                 <td align="center"><?= $statut ?></td>
                                                                 <?php
-                                                                if ($lvl == 4 || $lvl == 5) {
+                                                                if ($lvl == 4 || $lvl == 5 || $lvl == 7) {
                                                                     ?>
                                                                     <td align="center"><a
                                                                             href="statut_users.php?id_user=<?= $id_user ?>"><i

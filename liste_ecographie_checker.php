@@ -142,12 +142,19 @@ include('php/main_side_navbar.php');
                                         <td><a href="#"><?=number_format($remise);?></a></td>
                                         <td>
 
-                                            <?php if($somme-($payer+$remise)==0)
-                                                echo'<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterEco'.$id_reg_eco.'">Ok</span>';
-                                            else
-                                                echo'<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterEco'.$id_reg_eco.'">Pas à Jour</span>';
+                                            <?php
+                                            if($lvl == 11){
+                                                if($somme-($payer+$remise)==0)
+                                                    echo'<span class="custom-badge status-green" >Ok</span>';
+                                                else
+                                                    echo'<span class="custom-badge status-red" >Pas à Jour</span>';
+                                            }else{
+                                                if($somme-($payer+$remise)==0)
+                                                    echo'<span class="custom-badge status-green" data-toggle="modal" data-target="#ajouterEco'.$id_reg_eco.'">Ok</span>';
+                                                else
+                                                    echo'<span class="custom-badge status-red" data-toggle="modal" data-target="#ajouterEco'.$id_reg_eco.'">Pas à Jour</span>';
+                                            }
                                             ?>
-
                                         </td>
                                         <td align="center"><a href="#" target="_blank">
                                                 <i class='fa fa-print'"></i>

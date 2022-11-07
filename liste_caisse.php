@@ -161,7 +161,7 @@ include('php/main_side_navbar.php');
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"
                                                    aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <?if($id_perso == $id_perso_session){ ?>
+                                                    <?php if($id_perso == $id_perso_session){ ?>
                                                     <a class="dropdown-item" href="transfert_caisse.php?id_caisse=<?=$id_caisse?>"><i
                                                                 class="fa fa-random"></i> Transfert</a>
                                                                 <?php }?>

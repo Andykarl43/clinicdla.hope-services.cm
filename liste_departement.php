@@ -69,10 +69,54 @@ include('php/main_side_navbar.php');
                                                         <tr>
                                                             <input name="nom" type="hidden" value=""/>
                                                             <td align="center"><b><?=$nom?></b></td>
-                                                            <td align="center"><a class="btn btn-danger"  href="delete_departement.php?id_depart=<?=$id_depart?>"  style="background-color: transparent">
+                                                            <td align="center">
+                                                                <?php
+                                                                echo '<a class="btn btn-warning" data-toggle="modal" data-target="#ajouterDepart' . $id_depart . '"  style="background-color: transparent"><i  style="color: orange" class="fas fa-pen"></i></a>';
+                                                                ?>
+                                                                <div class="modal fade" id="ajouterDepart<?= $id_depart ?>" role="dialog">
+                                                                    <div class="modal-dialog">
+                                                                        <!-- Modal content-->
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header" style="padding:20px 50px;">
+                                                                                <h3 align="center"><i class="fas fa-map"></i>
+                                                                                    <b>Modifier</b></h3>
+                                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                                        title="Close">&times;
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body" style="padding:40px 50px;">
+                                                                                <form class="form-horizontal" action="update_departement.php"
+                                                                                      name="form" method="post">
+                                                                                    <div class="form-group">
+                                                                                        <label>Nom :</label>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input type="hidden" name="id_depart" value="<?=$id_depart?>">
+                                                                                            <input type="text" name="nom" class="form-control" value="<?=$nom?>">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-sm-12">
+                                                                                            <center>
+                                                                                                <input type="submit" style=" width:25% "
+                                                                                                       name="submit_cs"
+                                                                                                       class="btn btn-primary"
+                                                                                                       value="Modifier">
+
+                                                                                                <input data-dismiss="modal" type="text"
+                                                                                                       style=" width:25% " name=""
+                                                                                                       class="btn btn-danger"
+                                                                                                       value="Annuler"/></center>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <a class="btn btn-danger"  href="delete_departement.php?id_depart=<?=$id_depart?>"  style="background-color: transparent">
                                                                         <i style="color: red" class="fas fa-trash"></i>
                                                                     </a></td>
-
                                                         </tr>
 
                                                     <?php } ?>
